@@ -1,0 +1,29 @@
+arquivo.writelines([]) --recebe uma lista
+arquivo.writelines(['ola', 'arquivo', 'teste'])
+arquivo.readline () --le uma linha do arquivo
+arquivo.readlines() -- le todas as linhas do arquivo, cria uma lista separando
+
+for i in range(2):
+ x = arquivo.readline()
+ print(x)
+
+
+---
+criar lista
+teste = [1,2,3]
+print(lista[3])
+lista += [7] --adiciona valor
+lista[2] = 7.7 --altera valor do campo 2
+lista[1:3] --percorre elementos de uma lista e cria sublista
+lista[0:3:2] --com passo
+lista[::-1] --lista invertida
+lista = [1,2,3,4, [1,2,3]] --lista dentro de lista
+lista = [[1,2],[3,4]], [5,6]] --2 listas juntas
+str(teste) --converte para string
+eval(teste) --grava as listas
+
+len(lista) --informa o numero total de elementos
+count(elemento) --informa quantas vezes o elemento aparece na lista
+
+for i in range(len(lista)):
+	

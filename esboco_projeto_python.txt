@@ -1,0 +1,22 @@
+(13:58) Henrique Machado: seguinte,
+(13:58) Henrique Machado: imagina que por exemplo eu tenho 3 arquivos assim
+(13:58) Henrique Machado: arquivo 1
+(13:58) Henrique Machado: campo1;campo2;campo3;campo4
+(13:58) Henrique Machado: arquivo 2
+(13:59) Henrique Machado: campo5;campo6;campo7
+(13:59) Henrique Machado: arquivo 3
+(13:59) Henrique Machado: campo8;campo9
+(13:59) Henrique Machado: eu quero ler esses 3 caras
+(13:59) Henrique Machado: e montar 3 arquivos de saida
+(13:59) Henrique Machado: da seequinta maneira
+(13:59) Henrique Machado: arquivo1
+(13:59) Henrique Machado: campo2;campo4;campo9;campo8
+(13:59) Henrique Machado: arquivo 2
+(13:59) Henrique Machado: campo1;campo4;campo3
+(13:59) Henrique Machado: campo7;campo6
+(14:00) Henrique Machado: o 3 arquivo esse ultimo
+
+14:01) Henrique Machado: considera a seguinte possibilidade
+(14:01) Henrique Machado: eu ler os 3 arquivos
+(14:01) Henrique Machado: e buscar mais informação via outra fonte (ex: tela)
+(14:01) Henrique Machado: e considerar esses valores na saida
