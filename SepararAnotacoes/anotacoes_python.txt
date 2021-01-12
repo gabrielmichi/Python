@@ -1,0 +1,5 @@
+tuplas é uma lista fixa
+pop - apaga um registro
+append - adiciona um registro
+
+type(dias) --fala o tipo da variavel

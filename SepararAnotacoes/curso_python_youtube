@@ -1,0 +1,81 @@
+https://www.youtube.com/watch?v=Vw6gLypRKmY&list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&index=12
+
+int = inteiros
+float = números decimais
+bool = boolean
+str = string
+
++ adição
+- subtração
+* multiplicação
+/ divisão
+** potência
+// divisão inteira (o número utilizado na divisão)
+% resto da divisão (módulo)
+
+ordem de procedência
+1 - ()
+2 - **
+3 - * / // %
+4 - + - 
+
+oi*5
+'oioioioioi'
+
+#deixa 20 espaços
+print('Prazer em te conhecer {:20}!'.format(nome))
+#alinhamento à direita
+print('Prazer em te conhecer {:>20}!'.format(nome))
+#alinhamento à esquerda
+print('Prazer em te conhecer {:<20}!'.format(nome))
+#alinhamento no centro
+print('Prazer em te conhecer {:^20}!'.format(nome))
+print('Prazer em te conhecer {:=^20}!'.format(nome))
+
+#3 casas decimais
+print('A soma é {}, o produto é {} e a divisão [e {:.3f}'.format(s, m, d), end=' ')
+
+n1 = int(input('Um valor: '))
+n2 = int(input('outro valor: '))
+print('A soma vale {}'.format(n1+n2))
+
+
+##############################
+###AULA 09 - MANIPULANDO TEXTO
+##############################
+
+frase[9] pega o 9a caracter q na verdade é o 10a
+frase[9:13] exibe 9-10-11-12 (sempre um a menos)
+frase[9:21:2] pula de 2 em 2
+frase[:5] começa do 0 até o 5
+frase[15:] mostra do 15 até o final
+frase[9::3] 9 até o final, pula de 3 em 3
+
+#Análise
+len(frase) #quantidade de caracteres
+frase.count('o') #conta quantidade de "o"
+frase.count('o',0,13) #conta, considerando do 0 até o 12
+frase.find('deo') #procura por 'deo' e fala onde começa
+'curso' in frase #procura na frase e retorna True or False
+
+#Transformação
+frase.replace('Python','Android') #Substitui 1 letra pela 2 letra
+frase.upper() #Altera tudo para maiusculo
+frase.lower() #altera tudo para minusculo
+frase.capitalize() #joga todos para minusculo, e coloca a primeira letra da primeira palavra em maiusculo
+frase.title() #analisa quantidade de caracteres, coloca cada quebra de palavra em maiusculo
+
+#Divisão
+frase.strip() #remove espaços da direita e esquerda
+frase.rstrip() #remove espaços à direita
+frase.lstrip() #remove espaços à esquerda
+frase.split() #divisão da string considerando os espaços e coloca em lista
+
+#Junção
+'-'.join(frase) #junta todos elementos de frase usando o separador "-"
+
+##escrever texto grande
+print("""texto,texto,texto,texto,texto,texto,texto,
+texto,texto,texto,texto,texto,texto,texto,
+texto,texto,texto,texto,texto,texto,texto""")
+

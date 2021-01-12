@@ -1,0 +1,127 @@
+DEBUG - informações mais detalhadas, quando estamos buscando o problema
+INFO - confirmar que as coisas estão funcionando como esperado
+WARNING - informação de que algo inesperado aconteceu (mas tudo funciona bem)
+ERROR - quando algo inesperado ocorre e o programa nao consegue executar bem
+CRITICAL - um erro grave aconteceu (impediu o sistema de executar algo)
+
+#LETRA MAIUSCULA VOCE ESTÁ ESPECIFICANDO O LEVEL
+
+import logging
+logging.basicConfig(filename='exemplo_2.log',
+	filemode='w',
+	level=logging.DEBUG)
+logging.debug('olá, estamos no arquivo')
+logging.info('olá, estamos no arquivo')
+logging.warning('olá, estamos no arquivo')
+logging.critical('olá, estamos no arquivo')
+logging.error('olá, estamos no arquivo')
+
+try:
+	1/0
+except Exception as e:
+	logging.warning(f'{e} - deu ruim')
+	pass
+
+asctime - mostra a hora do log
+filename - o arquivo que a chamada foi feita
+levelname - nível do log
+message - mensagem logada
+lineno - linha onde ocorre o erro
+
+#EXEMPLO3
+import logging
+
+log_format = '%(asctime)s:%(levelname)s:%(filename)s:%(lineno)d:%(message)s'
+
+logging.basicConfig(filename='exemplo_3.log',
+	filemode='w',
+	level=logging.DEBUG
+	format=log_format)
+logger = loggging.getLogger('root')
+
+def add(x: int, y: int) -> int:
+	"""Função que efetua a soma de dois números inteiros."""
+	if isinstance(x, int) and isinstance(y, int):
+		logger.info(f'x: {x} - y: {y}')
+		return x+y
+	else:
+		logger.warning(
+		 f'x: {x} type: {type(x)} - y: {y} type: {type(y)}'
+add(7,7)
+add(7.5,7)
+
+#logger.info()
+
+#########################################
+
+Level
+Handler
+Formater
+Filter
+
+Logger
+configuração - envio de mensagens
+setLevel
+addHandler
+removeHandler
+addFilter
+removeFilter
+
+getLogger - devolve log especifico configurado
+Handler - pode existir vários tipos no mesmo log, que escreve na tela, envia e-mail, etc..
+Formater - chamado para formatar as mensagens
+
+ver aula da collections bc
+
+
+####EXEMPLO 4
+
+import logging
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+formatter = logging.Formater('%(asctime)s:%(levelname)s:%(filename)s:%(lineno)d:%(message)s')
+
+#CONSOLE HANDER
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+ch.setFormatter(formatter)
+
+logger.addHandler(ch)
+
+logger.debug('Olá')
+
+
+##Simple_logging.ini
+https://github.com/dunossauro/live-de-python/tree/master/codigo/Live48
+
+[loggers]
+keys = root
+
+
+[handlers]
+key = FileHandler, TerminalHadler
+
+[formatters]
+keys = simpleFormatter
+
+[logger_root]
+level = DEBUG
+handlers = FileHandler
+
+[handler_FileHandler]
+class = FileHandler
+formatter = simpleFormatter
+args = ('log.log', 'w')
+
+[formatter_simpleFormatter]
+format = logging.Formater('%(asctime)s:%(levelname)s:%(filename)s:%(lineno)d:%(message)s')
+
+####
+
+arquivo
+import logging
+import logging.config
+
+logging.config.fileConfig('simple_logging.ini')

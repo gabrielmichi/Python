@@ -1,0 +1,72 @@
+##SPARK
+https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html
+cd spark
+cd projetos
+pyspark
+
+#para cada item na lista, verficar se o item é par e multiplicar
+[item * 2 for item in lista if item % 2 == 0 ]
+
+#elevar ao quadrado e para cada item da lista, verificar se é par
+[item ** 2 for item in lista if item % 2 == 0]
+
+#contar quantidade de não na lista "pessoa"
+item for item in pessoa if item.count("não") >= 1]
+
+#converta para float cada item da lista e imprima os maiores iguais a 3
+lista['1','2','3','4','5']
+[float(item) for item in lista if item >= '3']
+[item for item in lista if item >= '3']
+
+##MAP
+
+
+##REDUCE
+from functools import reduce
+
+#sem reduce
+elementos = range(1,100)
+def acumulador(lista):
+	acumulado = 0
+	
+	for item in lista:
+		acumulado = item + acumulado
+	return acumulado
+
+#com reduce
+soma = reduce((lambda x,y: x+y), elementos)
+
+#utilizando reduce como função do SPARK
+from pyspark import SparkContext
+sc = SparkContext.getOrCreate()
+
+rddList = sc.parallelize([1,2,3,4,5,6,7,8,9,10],2)
+soma = rddList.reduce(lambda acumulador, numero: acumulador + numero)
+
+#Aplicando redução com multiplicação
+multi = rddList.reduce(lambda acumulador, numero: acumulador * numero)
+print(multi)
+
+##SPARK
+#instalar JDK JRE
+Realiza acesso em memória, se acabar acessa o disco
+
+##Podemos definir uma função
+def soma(acmum, n):
+	return acum + n
+
+resultado = rddList.reduce(soma)
+print(resultado)
+
+from pyspark import SparkContext
+sc = SparkContext(master="local", appName="Minha app")
+
+#Criando RDDS através de dados
+dados_nativos = sc.parallelize([('Brasil',5),('Alemanha',4),('Italia',4)])
+
+#Le arquivos
+dados_nativos.collect()
+dados_arquivo.take()
+
+#NUMPY
+A = np.arraqy(range(100))

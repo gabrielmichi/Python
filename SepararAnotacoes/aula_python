@@ -1,0 +1,46 @@
+#métodos
+	def get_saldo(self):
+	return self.__saldo
+
+	def get_titular(self):
+	return self.__titular
+
+	@property
+	def get_limite(self):
+	return self.__limite
+	
+	@limite.setter
+	def set_limite(self, limite):
+	self.__limite = limite
+
+
+
+---novo arquivo
+
+class Cliente:
+
+    def __init__(self, nome):
+        self.__nome = nome
+
+# Properties
+    @property
+    def nome(self):
+        print("chamando @property nome()")
+        # altera primeira letra p/ maiusculo
+        return self.__nome.title()
+
+    @nome.setter
+    def nome(self, nome):
+        print("chamando setter nome()")
+        self.__nome = nome
+
+#chama na tela
+from conta import Conta
+cliente = Cliente("Marco")
+cliente.nome = "Gabriel"
+
+#chamar propertie
+cliente.nome
+
+conta = Conta(123, "Gabriel", 55.5, 1000.0)
+conta.limite = 2000.0
