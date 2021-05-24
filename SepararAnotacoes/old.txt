@@ -1,0 +1,27 @@
+old
+#!/bin/bash
+
+cd ~/Downloads/imagens-novos-livros
+# faz varredura de todo o contudo *
+for arquivo in *
+do
+#verifica se é diretório
+    if [ -d $arquivo ]
+    then
+        cd $arquivo
+        for conteudo_arquivo in *
+        do
+            if [ -d $conteudo_arquivo ]
+            then
+              #entrar no diretorio e fazer a varredura
+            else
+              #conversao jpg para png
+            fi
+        done
+    else
+        #conversão jpg para png
+    fi
+done
+
+--encontrar arquivos
+find ~/Downloads/imagens-novos-livros -name java_basico

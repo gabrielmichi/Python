@@ -1,0 +1,314 @@
+python -V
+
+--executar sem instalar
+python repl
+https://repl.it/repls/LooseGrossOutcomes
+
+--instalar editor de texto
+https://www.jetbrains.com/pycharm/download/#section=windows
+
+print("Ola mundo")
+
+--digitar help e depois comando
+help()
+para sair é ctrl + c
+
+--sep = separador com condição
+print("O Brasil", "ganhou", 5, "títulos mundiais", sep="-")
+
+--end = imprime o que é definido no final da linha
+print("Brasil", "ganhou", 5, "titulos mundiais", end=", Parabéns BRASIL!!!")
+
+--criar variavel e ver o tipo
+pais = "Italia"
+type(pais)
+quantidade = 4
+type(quantidade)
+
+--imprimir 
+print(pais, "ganhou", quantidade, "titulos mundiais")
+
+--EXEMPLO
+>>> subst = "Python"
+>>> verbo = "é"
+>>> adjetivo = "fantástico"
+>>> print(subst, verbo, adjetivo, sep="_", end="!\n")
+Python_é_fantástico!
+
+--Python substitui tipo de variaveis
+pais="Brasil"
+pais=433
+type(pais) --tipo int
+
+--Padrão Snake_case
+idade_esposa = 20
+perfil_vip = 'Flávio Almeida'
+recibos_em_atraso = 30
+
+
+------------------------------PARTE 2 - entrada do usuário
+
+print("**********************************")
+print("Bem vindo ao jogo de adivinhacao!")
+print("**********************************")
+
+numero_secreto = 42
+
+chute_str = input("Digite o seu número: ")
+
+print("Você digitou ", chute_str)
+
+chute = int(chute_str)
+
+acertou = numero_secreto == chute
+maior = chute > numero_secreto
+menor = chute < numero_secreto
+
+if(acertou):
+    print("Você acertou!")
+else:
+    if(maior):
+        print("você errou! o seu chute foi maior do que o número secreto.")
+    elif(menor):
+        print("você errou! o seu chute foi menor do que o número secreto.")
+
+print("Fim do jogo!")
+
+
+----------while
+while(rodada <= total_de_tentativas):
+    print("Tentativa {} de {}".format(rodada, total_de_tentativas))
+    chute_str = input("Digite o seu número: ")
+    rodada = rodada + 1
+print("Fim do jogo")
+
+----------FOR
+
+for rodada in range(1,10):
+    print(rodada)
+
+--vai de 2 em 2
+for rodada in range(1,10,2):
+    print(rodada)
+
+-------------------------------------
+
+print("Tentativa {} de {}".format(3,10))
+print("Tentativa {1} de {0}".format(3,10)) --ordem inversa
+
+--formatação float
+print("Tentativa {} de {}".format(3,10))
+"R$ {:.2f}".format(1.59)
+"R$ {:07.2f}".format(1.59)
+"R$ {:07d}".format(46)
+"Data {:02d}/{:02d}".format(19,11)
+https://docs.python.org/3/library/string.html#formatexamples
+
+-------------------------------
+# https://docs.python.org/3/library/random.html?highlight=random#module-random
+# https://docs.python.org/3/library/functions.html
+
+# Biblioteca random precisa importar
+import random
+
+# Gera número float
+# 0.0, 1.0
+random.random()
+
+# Apenas numeros inteiros
+numero_random = random.random() * 100
+int(numero_random) #pega o número inteiro
+round(numero_random) #arredonda
+
+# faz direto
+random.randrange(1,101)
+
+# Seed - evidencia que é gerado o mesmo número
+>>> random.seed(1, 101)
+>>> random.randrange(100)
+
+-----------------------------
+# Numero absoluto
+abs(numero_secreto - chute)
+
+# A divisão 3/2 irá trazer um número float
+# A divisão com "//" 3/2 irá trazer um número inteiro
+
+
+-----------------------------
+reliza busca letra l, lembrando que começa com 0
+palavra.find("l")
+
+começa a procurar a partir da posição 1
+palavra.find("a",1)
+
+------funcoes str
+
+--primeira letra maiúscula da var "Palavra"
+palavra.capitalize()
+
+--se no final da palavra tem "na"
+palavra.endswith("na")
+
+--tudo letra minuscula
+palavra2.lower()
+
+--tudo letra maisucula
+palavra.upper()
+
+--tira os espaços da palavra
+palavra.strio()
+
+
+----------------------LISTAS
+procurar por python list type
+criar lista
+valores = []
+valores = [0,1,2,3,"x"]
+valores.append(7)
+--entrada
+6 in valores
+3 in valores
+"a" in "banana"
+valores[4]
+min(valores)
+max(valores)
+len(valores)
+valores.pop() --devolve ultimo elemento e remove
+
+--conta numero de determinado elemento
+--3 vezes numero 0
+valores = [ 0, 0, 0, 1, 2, 3, 4]
+print(valores.count(0))
+
+--indice determinado elemento
+--posicao do elemento
+frutas = ['Banana', 'Morango', 'Maçã', 'Uva']
+print(frutas.index('Uva'))
+
+--indice com senao
+frutas = ['Banana', 'Morango', 'Maçã', 'Uva']
+fruta_buscada = 'Melancia'
+if fruta_buscada in frutas:
+    print(frutas.index(fruta_buscada))
+else:
+    print('Desculpe, a {} não está na lista frutas'.format( fruta_buscada))
+
+
+dias = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"]
+
+--adiciona dia
+dias.append("Sábado2")
+
+--apaga ultimo registro
+dias.pop()
+
+
+---------TUPLA
+--TUPLA NÃO PODE ALTERAR (IMUTÁVEL)
+
+
+TUPLAS dentro de uma lista
+p1 = (3,5)
+p2 = (4,6)
+p3 = (5,7)
+line = [p1,p2,p3]
+dias = ("Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado")
+
+--transformar lista em tupla, para não ler mais
+nova = tuple(palavras)
+outra = list(nova)
+
+linhas_tuple = tuple(linhas)
+linhas_tuple
+
+--transformar tuplas em listas
+linhas_list = list(linhas_tuple)
+linhas_list
+
+--------SET NÃO ACEITA DUPLICADOS
+--Um set é uma coleção não ordenada de elementos. Cada elemento é único, isso significa que não existem elementos duplicados dentro do set.
+colecao = {11122233344, 22233344455, 33344455566}
+colecao.add(44455566677) #vai adicionar pois não existe ainda
+
+
+-------------------DICTIONARY
+--criamos as tuplas
+pessoa1 = ("Nico", 39)
+pessoa2 = ("Flavio", 37)
+pessoa3 = ("Marcos", 30)
+
+--guardamos as tuplas dentro de uma lista
+instrutores = [pessoa1, pessoa2, pessoa3]
+
+--imprimir todos
+instrutores
+
+--imprimir idade do flavio
+instrutores[1][1]
+
+--USANDO DICTIONARY para printar sem saber a posição
+instrutores = {'Nico' : 39, 'Flavio': 37, 'Marcos' : 30}
+instrutores['Flavio']
+
+
+-----------------------encerramento do jogo
+--Carlos criou um loop para calcular a quantidade de caracteres em uma palavra através do seguinte código:
+total = 0
+palavra = "python rocks!"
+acabou = False
+while (not acabou):
+    acabou = ( total == len(palavra) )
+    total = total + 1
+print(total - 1)
+
+--DESCUBRE SE UM NUMERO É PAR
+inteiros = [1,3,4,5,7,8,9]
+pares = []
+for numero in inteiros:
+    if numero % 2 == 0:
+        pares.append(numero)
+
+--utilizando List Comprehension 
+inteiros = [1,3,4,5,7,8,9]
+pares = [x for x in inteiros if x % 2 == 0]
+
+
+---------------------------Escrita e leitura de arquivos
+--abrir arquivo
+--O nome do arquivo e o modificador de acesso(opcional).
+--(a)append, w(write), (r)read
+arquivo = open("palavras.txt", "w")
+arquivo
+
+--escreve no arquivo
+arquivo.write("banana")
+--fecha arquivo
+arquivo.close()
+
+--adiciona nova linha
+arquivo.write("morango\n")
+
+--le arquivo inteiro
+arquivo.read()
+
+--le uma linha
+linha = arquivo.readline()
+print(linha)
+
+--le arquivo por linhas
+--print possui um \n embutido no end="\n"
+for linha in arquivo:
+	print(linha)
+
+--limpa os espaços
+linha.stript()
+
+--gera número aleatório
+import random
+random.randrange(0,4)
+
+--o python fecha o arquivo automaticamente
+with open("palavras.txt") as arquivo:
+    for linha in arquivo:
+        print linha
